@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.todo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" 
+        />
+    
+    <uses-permission 
+                android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        
+        />
+    
+    
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.todo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.todo.SplashScreen"
+            android:label="@string/title_activity_splash_screen" >
+        </activity>
+        <activity
+            android:name="com.example.todo.SecondActivity"
+            android:label="@string/title_activity_second" >
+        </activity>
+        <activity
+            android:name="com.example.todo.NewTaskActivity"
+            android:label="@string/title_activity_new_task" >
+        </activity>
+        <activity
+            android:name="com.example.todo.AddBirthDayActivity"
+            android:label="@string/title_activity_add_birth_day" >
+        </activity>
+        <activity
+            android:name="com.example.todo.NewMeetingActivity"
+            android:label="@string/title_activity_new_meeting" >
+        </activity>
+        <activity
+            android:name="com.example.todo.UpcomingActivity"
+            android:label="@string/title_activity_upcoming" >
+        </activity>
+
+        <service android:name="com.example.todo.Task_New" >
+        </service>
+        <service android:name="com.example.todo.Task_Meeting" >
+        </service>
+        <service android:name="com.example.todo.Task_Sms" >
+        </service>
+
+        <activity
+            android:name="com.example.todo.UpcomingNewTaskActivity"
+            android:label="@string/title_activity_upcoming_new_task" >
+        </activity>
+        <activity
+            android:name="com.example.todo.UpcomingBirthdayActivity"
+            android:label="@string/title_activity_upcoming_birthday" >
+        </activity>
+        <activity
+            android:name="com.example.todo.UpcomingMeetingActivity"
+            android:label="@string/title_activity_upcoming_meeting" >
+        </activity>
+        
+        
+        <receiver 
+            android:name=".BroadCastReceiver"
+            android:enabled="true"
+            android:exported="false"
+            
+            
+            >
+            
+            <intent-filter 
+               
+                >
+                
+                <action 
+                    
+                    android:name="android.intent.action.BOOT_COMPLETED"
+                    />
+            </intent-filter>
+            
+        </receiver>
+    </application>
+
+</manifest>
